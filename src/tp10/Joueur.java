@@ -3,6 +3,7 @@ package tp10;
 public class Joueur {
 	private String nom;
 	private String prenom;
+	@SuppressWarnings("unused")
 	private int age;
 	private Pokemon[] pokemons;
 	private Nourriture[] caisseNourriture;

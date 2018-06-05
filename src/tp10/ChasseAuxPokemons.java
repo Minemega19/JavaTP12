@@ -22,6 +22,7 @@ public class ChasseAuxPokemons {
 				String nom = s.next();
 				mappePokemons.put(nom, numeroPokedex);
 			}
+			s.close();
 		}
 		catch(IOException e) {
 			e.printStackTrace();
@@ -67,6 +68,7 @@ public class ChasseAuxPokemons {
 				}
 				pokemonList.add(new Pokemon(numeroPokedex, nom, type, niveau, diurne, attaque, defense, attaqueSpeciale, defenseSpeciale, sesAttaquesTableau));
 			}
+			s.close();
 		}
 		catch (IOException e) {
 			e.printStackTrace();
@@ -97,7 +99,9 @@ public class ChasseAuxPokemons {
 		// TP 3
 		
 		// la nourriture
+		@SuppressWarnings("unused")
 		final Nourriture tartiflette = new Nourriture("tartiflette", 30, 35, new String[] {"DRAGON", "FEU", "COMBAT", "EAU", "ELECTRIQUE"});
+		@SuppressWarnings("unused")
 		final Nourriture ratatouille = new Nourriture("ratatouille", 30, 10, new String[] {"PLANTE", "EAU", "VOL", "FEU", "NORMAL", "ELECTRIQUE", "COMBAT"}); 
 
 		// TP 4

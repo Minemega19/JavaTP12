@@ -1,7 +1,5 @@
 package tp10;
 
-import java.util.Random;
-
 public class Outil extends Item implements ChangeItems {
 
 	public Outil(String nom, int frequence, int utilisations) {

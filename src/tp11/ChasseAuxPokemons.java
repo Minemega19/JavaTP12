@@ -20,13 +20,14 @@ public class ChasseAuxPokemons {
 		
 		
 		
-		try(FileReader lecteur = new FileReader("C:/Users/crist/eclipse-workspace/TP11/src/tp11/pokedexComplet.txt")){
+		try(FileReader lecteur = new FileReader("C:\\Users\\iut\\Desktop\\JavaTP12-master\\src\\tp11\\pokedexComplet.txt")){//changer selon le pc
 			Scanner s = new Scanner(lecteur);
 			while (s.hasNext()) {
 				int numeroPokedex = s.nextInt();
 				String nom = s.next();
 				mappePokemons.put(nom, numeroPokedex);
 			}
+			s.close();
 		}
 		catch(IOException e) {
 			e.printStackTrace();
@@ -46,7 +47,7 @@ public class ChasseAuxPokemons {
 		mappeAttaques.put("coupDeTete", new AttaqueCoupDeTete());
 
 		final ArrayList<Pokemon> pokemonList = new ArrayList<>();
-		try(FileReader lecteur = new FileReader("C:/Users/crist/eclipse-workspace/TP11/src/tp11/InputFile.txt")){
+		try(FileReader lecteur = new FileReader("C:\\Users\\iut\\Desktop\\JavaTP12-master\\src\\tp11\\InputFile.txt")){//changer selon le pc
 			Scanner s = new Scanner(lecteur);
 			while(s.hasNext()) {
 				String nom = s.next();
@@ -73,6 +74,7 @@ public class ChasseAuxPokemons {
 				}
 				pokemonList.add(new Pokemon(numeroPokedex, nom, type, niveau, diurne, attaque, defense, attaqueSpeciale, defenseSpeciale, sesAttaquesTableau));
 			}
+			s.close();
 		}
 		catch (IOException e) {
 			e.printStackTrace();
@@ -89,7 +91,7 @@ public class ChasseAuxPokemons {
 		
 		
 		try {
-			moi.getPokedex().charger("C:/Users/crist/eclipse-workspace/TP11/src/tp11/monPokedex.txt");
+			moi.getPokedex().charger("C:/Users/crist/eclipse-workspace/TP11/src/tp11/monPokedex.txt");//changer selon le pc
 		}
 		catch (FileNotFoundException e) {
 			System.err.println("Je ne peux pas charger le pokedex du joueur " +moi.getPrenom() + " " +moi.getNom() + ". Ce fichier n'existe encore pas, mais il sera genere lors de votre prochaine session.");
@@ -113,6 +115,7 @@ public class ChasseAuxPokemons {
 		System.out.println();
 
 		String reponse = "";
+		@SuppressWarnings("unused")
 		int index;
 		int reponseEntier;
 		
@@ -253,15 +256,15 @@ public class ChasseAuxPokemons {
 		
 		// TP 10
 		try {
-			moi.getPokedex().sauvegarder("C:/Users/crist/eclipse-workspace/TP11/src/tp11/monPokedex.txt");
+			moi.getPokedex().sauvegarder("C:\\Users\\iut\\Desktop\\JavaTP12-master\\src\\tp11\\monPokedex.txt");//changer selon le pc
 		}
 		catch (IOException e) {
 			System.err.println("Je ne peux pas sauvegarder le pokedex du joueur " + moi.getPrenom() + " " +moi.getNom());
 			e.printStackTrace();
 		}
 				
-			
-		
+		lecteur.close();	
+
 	}
 	
 
